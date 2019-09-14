@@ -3,7 +3,7 @@ const game = () => {
     let cScore = 0;
     const playerNameScreen = document.querySelector('.playerName');
     const introScreen = document.querySelector('.intro');
-    let playerName = document.querySelector('.playerName input')
+    const inputPlayer = document.querySelector('.playerName input');
     let player = document.querySelector('.player-score h2')
     const matchScreen = document.querySelector('.match');
     const gameOverScreen = document.querySelector('.gameOver');
@@ -16,6 +16,8 @@ const game = () => {
         nextButton.addEventListener(
             'click',
             () => {
+                introScreen.style.transition = 'opacity 0.5s ease';
+                introScreen.classList.remove('fadeIn')
                 introScreen.classList.add('fadeOut')
                 playerNameScreen.classList.remove('fadeOut')
                 playerNameScreen.classList.add('fadeIn')
@@ -24,17 +26,22 @@ const game = () => {
     }
 
     const startGame = () => {
+        const choseOption = document.querySelector('.winner')
 
         const playButton = document.querySelector('#submitName');
+        let playerName = ''
 
         playButton.addEventListener(
             'click',
             () => {
+                choseOption.innerText = "Choose an option"
                 playerNameScreen.classList.remove('fadeIn')
                 playerNameScreen.classList.add('fadeOut')
                 matchScreen.classList.remove('fadeOut')
                 matchScreen.classList.add('fadeIn')
-                playerName = playerName.value
+
+                playerName = inputPlayer.value;
+                console.log(playerName)
                 player.innerText = playerName.charAt(0).toUpperCase() + playerName.slice(1);
 
             }
@@ -60,7 +67,7 @@ const game = () => {
             })
         })
 
-        console.log(options)
+
         // Computer Options
         const computerOption = ['rock' ,'paper', 'scissors'];
 
@@ -160,32 +167,56 @@ const game = () => {
     }
 
     const gameOver = () => {
+        const gameOverHeading = document.querySelector('.gameOver h1');
+        const gameOverParagraph = document.querySelector('.gameOver p');
 
-        if (pScore == 1) {
-            console.log("You win!")
+
+        if (pScore == 3) {
             matchScreen.classList.remove('fadeIn');
             matchScreen.classList.add('fadeOut');
             gameOverScreen.classList.add('fadeIn');
             gameOverScreen.classList.remove('fadeOut');
+            gameOverHeading.innerText = `Good Job ${player.innerText}!!`;
+            gameOverParagraph.innerText = `You won with stupid computer`
             pScore = 0;
             cScore = 0;
             return
-        } else if (cScore == 1) {
-            console.log("Computer win!");
+        } else if (cScore == 3) {
             matchScreen.classList.remove('fadeIn');
             matchScreen.classList.add('fadeOut');
             gameOverScreen.classList.add('fadeIn');
             gameOverScreen.classList.remove('fadeOut');
+            gameOverHeading.innerText = `Unlucky ${player.innerText}!!`;
+            gameOverParagraph.innerText = `You lost with stupid computer :(`
             pScore = 0;
             cScore = 0;
         }
 
     }
 
-    console.log(pScore + " / " + cScore)
+    const playAgain = () => {
+        const playAgainButton = document.querySelector('.gameOver button');
+
+
+        playAgainButton.addEventListener(
+            'click',
+            () => {
+                console.log("again")
+                gameOverScreen.classList.remove('fadeIn')
+                gameOverScreen.classList.add('fadeOut')
+                introScreen.classList.remove('fadeOut')
+                introScreen.style.transition = 'opacity 0.5s ease 1.2s'
+                introScreen.classList.add('fadeIn')
+
+
+
+
+            }
+        )
+    }
 
     // call all the inner functions
-    gameOver();
+    playAgain();
     typeUserScreen();
     startGame();
     playMatch();
