@@ -56,7 +56,7 @@ section {
 
 .intro {
   color: #f6f6f6;
-  height: 50vh;
+  height: 70vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -75,20 +75,18 @@ section {
 
 .intro h1 {
   font-size: 60px;
+  margin-bottom: 20vh;
+  text-align: center;
 }
 
 .intro .mt-4 {
-  matgin-bottom: 30px;
+  margin-bottom: 30px;
+  margin-top: 30px;
   font-size: 40px;
 }
 
 .intro li {
   font-size: 25px;
-}
-
-.intro button {
-  margin-top: 100px;
-  margin-bottom: 100px;
 }
 
 .playerName {
@@ -200,6 +198,43 @@ div.fadeOut {
 div.fadeIn {
   opacity: 1;
   pointer-events: all;
+}
+
+@media (max-width: 600px) {
+  .intro {
+    height: 50vh;
+  }
+  .intro h1 {
+    font-size: 25px;
+    margin-bottom: 60px;
+  }
+  .intro li {
+    font-size: 15px;
+  }
+  .intro button,
+  .match button,
+  .playerName button,
+  .gameOver button {
+    width: 90px;
+    height: 30px;
+    cursor: pointer;
+    margin: 10px;
+    background: none;
+    border: none;
+    color: #f6f6f6;
+    font-size: 13px;
+    background: #023246;
+    border-radius: 2px;
+  }
+  img {
+    width: 152px;
+    height: 134px;
+  }
+  .options {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
 @-webkit-keyframes shakePlayer {
