@@ -25,6 +25,7 @@ section {
 }
 
 .score h2 {
+  margin-top: 30px;
   font-size: 30px;
 }
 
@@ -34,9 +35,25 @@ section {
   font-size: 25px;
 }
 
+.intro button,
+.match button,
+.playerName button,
+.gameOver button {
+  width: 150px;
+  height: 50px;
+  cursor: pointer;
+  margin: 20px;
+  background: none;
+  border: none;
+  color: #f6f6f6;
+  font-size: 20px;
+  background: #023246;
+  border-radius: 3px;
+}
+
 .intro {
   color: #f6f6f6;
-  height: 50vh;
+  height: 70vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -54,21 +71,87 @@ section {
 }
 
 .intro h1 {
+  font-size: 60px;
+  margin-bottom: 20vh;
+  text-align: center;
+}
+
+.intro .mt-4 {
+  margin-bottom: 30px;
+  margin-top: 30px;
+  font-size: 40px;
+}
+
+.intro li {
+  font-size: 25px;
+}
+
+.playerName {
+  color: #f6f6f6;
+  height: 50vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: opacity 0.5s ease .2s;
+  transition: opacity 0.5s ease .2s;
+}
+
+.playerName h1 {
   font-size: 50px;
 }
 
-.intro button,
-.match button {
-  width: 150px;
+.playerName input {
+  width: 350px;
   height: 50px;
-  cursor: pointer;
-  margin: 20px;
-  background: none;
-  border: none;
+  font-size: 30px;
+}
+
+.gameOver {
   color: #f6f6f6;
-  font-size: 20px;
-  background: #023246;
-  border-radius: 3px;
+  height: 50vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: opacity 0.5s ease 1s;
+  transition: opacity 0.5s ease 1s;
+}
+
+.gameOver h1 {
+  font-size: 50px;
+}
+
+.gameOver p {
+  text-align: center;
+  padding: 10px;
+  font-size: 25px;
 }
 
 .match {
@@ -77,8 +160,8 @@ section {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  -webkit-transition: opacity 0.5s ease 0.5s;
-  transition: opacity 0.5s ease 0.5s;
+  -webkit-transition: opacity 0.5s ease 0.7s;
+  transition: opacity 0.5s ease 0.7s;
 }
 
 .winner {
@@ -112,6 +195,45 @@ div.fadeOut {
 div.fadeIn {
   opacity: 1;
   pointer-events: all;
+}
+
+@media (max-width: 600px) {
+  .intro {
+    height: 50vh;
+  }
+  .intro h1 {
+    font-size: 25px;
+    margin-bottom: 60px;
+  }
+  .intro li {
+    font-size: 15px;
+  }
+  .playerName h1 {
+    font-size: 30px;
+  }
+  .gameOver h1 {
+    font-size: 30px;
+    text-align: center;
+  }
+  .match .winner {
+    font-size: 30px;
+    text-align: center;
+  }
+  .match button {
+    width: 90px;
+    height: 30px;
+    font-size: 13px;
+    border-radius: 2px;
+  }
+  img {
+    width: 152px;
+    height: 134px;
+  }
+  .options {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
 @-webkit-keyframes shakePlayer {

@@ -10,6 +10,7 @@
 <body>
 
     <section class="game">
+
         <div class="score">
             <div class="player-score">
                 <h2>Player</h2>
@@ -21,9 +22,22 @@
                 <p>0</p>
             </div>
         </div>
+
         <div class="intro">
             <h1>Rock Paper and Scissors</h1>
             <button>Let's Play</button>
+            <p class="mt-4">Some rules</p>
+            <ul>
+                <li>It's just a simple rock, paper and scissors game</li>
+                <li>Game ends with three wins</li>
+                <li>Good Luck and Have Fun :)</li>
+            </ul>
+        </div>
+
+        <div class="playerName fadeOut">
+            <h1>Type your name</h1>
+            <input type="text" id="playerName">
+            <button id="submitName">Play Game!</button>
         </div>
 
         <div class="match fadeOut">
@@ -38,6 +52,12 @@
                 <button class="scissors">scissors</button>
             </div>
 
+        </div>
+
+        <div class="gameOver fadeOut">
+            <h1>Game Over!</h1>
+            <p>Computer Won :(</p>
+            <button>Play Again</button>
         </div>
 
     </section>

@@ -18,6 +18,7 @@ section {
     align-items: center;
 
     h2 {
+        margin-top: 30px;
         font-size: 30px;
     }
 
@@ -28,22 +29,11 @@ section {
     }
 }
 
-.intro {
-    color: #f6f6f6;
-    height: 50vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    transition: opacity 0.5s ease;
-
-    h1 {
-        font-size: 50px;
-    }
-}
-
 .intro button,
-.match button {
+.match button,
+.playerName button,
+.gameOver button,
+    {
     width: 150px;
     height: 50px;
     cursor: pointer;
@@ -56,12 +46,89 @@ section {
     border-radius: 3px;
 }
 
+.intro {
+    color: #f6f6f6;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transition: opacity 0.5s ease;
+
+
+    h1 {
+        font-size: 60px;
+        margin-bottom: 20vh;
+        text-align: center;
+    }
+
+    .mt-4 {
+        margin-bottom: 30px;
+        margin-top: 30px;
+        font-size: 40px;
+    }
+
+    li {
+        font-size: 25px;
+    }
+}
+
+.playerName {
+    color: #f6f6f6;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.5s ease .2s;
+
+    h1 {
+        font-size: 50px;
+    }
+
+    input {
+        width: 350px;
+        height: 50px;
+        font-size: 30px;
+    }
+}
+
+.gameOver {
+    color: #f6f6f6;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.5s ease 1s;
+
+    h1 {
+        font-size: 50px;
+    }
+
+    p {
+        text-align: center;
+        padding: 10px;
+        font-size: 25px;
+    }
+}
+
+
+
 .match {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    transition: opacity 0.5s ease 0.5s;
+    transition: opacity 0.5s ease 0.7s;
 }
 
 .winner {
@@ -78,18 +145,75 @@ section {
 }
 
 .player-hand {
-    transform: rotateY(180deg)
+    transform: rotateY(180deg);
 }
 
 div.fadeOut {
     opacity: 0;
     pointer-events: none;
-
 }
 
 div.fadeIn {
     opacity: 1;
     pointer-events: all;
+}
+
+@media (max-width: 600px) {
+    .intro {
+
+        height: 50vh;
+
+        h1 {
+            font-size: 25px;
+            margin-bottom: 60px;
+
+        }
+
+        li {
+            font-size: 15px;
+
+        }
+    }
+
+    .playerName {
+        h1 {
+            font-size: 30px;
+        }
+    }
+
+    .gameOver {
+        h1 {
+            font-size: 30px;
+            text-align: center;
+        }
+    }
+
+
+    .match {
+
+        .winner {
+            font-size: 30px;
+            text-align: center;
+        }
+
+        button {
+            width: 90px;
+            height: 30px;
+            font-size: 13px;
+            border-radius: 2px;
+        }
+
+    }
+
+    img {
+        width: 152px;
+        height: 134px;
+    }
+
+    .options {
+        justify-content: center;
+    }
+
 }
 
 @keyframes shakePlayer {
