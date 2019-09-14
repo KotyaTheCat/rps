@@ -1,27 +1,47 @@
 const game = () => {
     let pScore = 0;
     let cScore = 0;
+    const playerNameScreen = document.querySelector('.playerName');
+    const introScreen = document.querySelector('.intro');
+    let playerName = document.querySelector('.playerName input')
+    let player = document.querySelector('.player-score h2')
+    const matchScreen = document.querySelector('.match');
+    const gameOverScreen = document.querySelector('.gameOver');
 
 
-    const typeUser = () => {
-        const playButton = document.querySelector('.intro button');
-        const introScreen = document.querySelector('.intro');
-        playButton.addEventListener(
+
+    const typeUserScreen = () => {
+        const nextButton = document.querySelector('.intro button');
+
+        nextButton.addEventListener(
             'click',
             () => {
                 introScreen.classList.add('fadeOut')
-                matchScreen.classList.add('fadeIn')
+                playerNameScreen.classList.remove('fadeOut')
+                playerNameScreen.classList.add('fadeIn')
             }
+        )
     }
 
     const startGame = () => {
 
+        const playButton = document.querySelector('#submitName');
 
-        const matchScreen = document.querySelector('.match');
+        playButton.addEventListener(
+            'click',
+            () => {
+                playerNameScreen.classList.remove('fadeIn')
+                playerNameScreen.classList.add('fadeOut')
+                matchScreen.classList.remove('fadeOut')
+                matchScreen.classList.add('fadeIn')
+                playerName = playerName.value
+                player.innerText = playerName.charAt(0).toUpperCase() + playerName.slice(1);
 
-
-
+            }
         )
+
+
+
     }
 
     // Play Match
@@ -56,9 +76,6 @@ const game = () => {
 
                 setTimeout(() => {
 
-
-
-
                     // Call compareHands
                     compareHands(this.textContent, computerChoice)
 
@@ -82,6 +99,11 @@ const game = () => {
         const computerScore = document.querySelector('.computer-score p')
         playerScore.textContent = pScore;
         computerScore.textContent = cScore;
+
+
+        gameOver();
+
+
     }
 
     const compareHands = (playerChoice, computerChoice) => {
@@ -95,7 +117,7 @@ const game = () => {
         // Check for rock
         if(playerChoice === 'rock') {
             if(computerChoice === 'scissors'){
-                winner.textContent = 'Player Wins!';
+                winner.textContent = `${player.innerText} Wins!`;
                 pScore++;
                 updateScore();
                 return;
@@ -109,7 +131,7 @@ const game = () => {
         // Check for scissors
         if(playerChoice === 'scissors') {
             if(computerChoice === 'paper') {
-                winner.textContent = 'Player Wins!';
+                winner.textContent = `${player.innerText} Wins!`;
                 pScore++;
                 updateScore();
                 return;
@@ -123,7 +145,7 @@ const game = () => {
         // Check for Paper
         if (playerChoice === 'paper') {
             if (computerChoice === 'rock') {
-                winner.textContent = 'Player Wins!';
+                winner.textContent = `${player.innerText} Wins!`;
                 pScore++;
                 updateScore();
                 return;
@@ -134,9 +156,37 @@ const game = () => {
                 return;
             }
         };
+
     }
 
+    const gameOver = () => {
+
+        if (pScore == 1) {
+            console.log("You win!")
+            matchScreen.classList.remove('fadeIn');
+            matchScreen.classList.add('fadeOut');
+            gameOverScreen.classList.add('fadeIn');
+            gameOverScreen.classList.remove('fadeOut');
+            pScore = 0;
+            cScore = 0;
+            return
+        } else if (cScore == 1) {
+            console.log("Computer win!");
+            matchScreen.classList.remove('fadeIn');
+            matchScreen.classList.add('fadeOut');
+            gameOverScreen.classList.add('fadeIn');
+            gameOverScreen.classList.remove('fadeOut');
+            pScore = 0;
+            cScore = 0;
+        }
+
+    }
+
+    console.log(pScore + " / " + cScore)
+
     // call all the inner functions
+    gameOver();
+    typeUserScreen();
     startGame();
     playMatch();
 }

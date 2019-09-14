@@ -77,8 +77,8 @@ section {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  -webkit-transition: opacity 0.5s ease 0.5s;
-  transition: opacity 0.5s ease 0.5s;
+  -webkit-transition: opacity 0.5s ease .2s;
+  transition: opacity 0.5s ease .2s;
 }
 
 .playerName h1 {
@@ -87,13 +87,48 @@ section {
 
 .playerName input {
   width: 350px;
-  height: 80px;
+  height: 50px;
   font-size: 30px;
+}
+
+.gameOver {
+  color: #f6f6f6;
+  height: 50vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: opacity 0.5s ease 1s;
+  transition: opacity 0.5s ease 1s;
+}
+
+.gameOver h1 {
+  font-size: 50px;
+}
+
+.gameOver p {
+  text-align: center;
+  padding: 10px;
+  font-size: 25px;
 }
 
 .intro button,
 .match button,
-.playerName button {
+.playerName button,
+.gameOver button {
   width: 150px;
   height: 50px;
   cursor: pointer;
@@ -112,8 +147,8 @@ section {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  -webkit-transition: opacity 0.5s ease 1s;
-  transition: opacity 0.5s ease 1s;
+  -webkit-transition: opacity 0.5s ease 0.7s;
+  transition: opacity 0.5s ease 0.7s;
 }
 
 .winner {
