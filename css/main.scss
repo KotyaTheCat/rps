@@ -42,8 +42,33 @@ section {
     }
 }
 
+.playerName {
+    color: #f6f6f6;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.5s ease 0.5s;
+
+    h1 {
+        font-size: 50px;
+    }
+
+    input {
+        width: 350px;
+        height: 80px;
+        font-size: 30px;
+    }
+}
+
 .intro button,
-.match button {
+.match button,
+.playerName button {
     width: 150px;
     height: 50px;
     cursor: pointer;
@@ -61,7 +86,7 @@ section {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    transition: opacity 0.5s ease 0.5s;
+    transition: opacity 0.5s ease 1s;
 }
 
 .winner {
@@ -78,13 +103,12 @@ section {
 }
 
 .player-hand {
-    transform: rotateY(180deg)
+    transform: rotateY(180deg);
 }
 
 div.fadeOut {
     opacity: 0;
     pointer-events: none;
-
 }
 
 div.fadeIn {
