@@ -9,10 +9,10 @@ const game = () => {
     const gameOverScreen = document.querySelector('.gameOver');
 
 
-
+    // Allows user to type his name
     const typeUserScreen = () => {
         const nextButton = document.querySelector('.intro button');
-
+        // Show user typing screen
         nextButton.addEventListener(
             'click',
             () => {
@@ -25,12 +25,13 @@ const game = () => {
         )
     }
 
+    // Start the game
     const startGame = () => {
         const choseOption = document.querySelector('.winner');
-
         const playButton = document.querySelector('#submitName');
         let playerName = '';
 
+        // Show match screen after pressing button
         playButton.addEventListener(
             'click',
             () => {
@@ -40,25 +41,20 @@ const game = () => {
                 matchScreen.classList.remove('fadeOut');
                 matchScreen.classList.add('fadeIn');
 
+                // Add current player to the heading
                 playerName = inputPlayer.value;
-                console.log(playerName);
                 player.innerText = playerName.charAt(0).toUpperCase() + playerName.slice(1);
 
             }
         )
-
-
-
     }
 
     // Play Match
-
     const playMatch = () => {
         const options = document.querySelectorAll('.options button');
         const playerHand = document.querySelector('.player-hand');
         const computerHand = document.querySelector('.computer-hand');
         const hands = document.querySelectorAll('.hands img');
-
 
         // Remove animation style
         hands.forEach(hand => {
@@ -71,6 +67,7 @@ const game = () => {
         // Computer Options
         const computerOption = ['rock' ,'paper', 'scissors'];
 
+        // Picks random number and assign the const computerOption to it
         options.forEach((option) => {
             option.addEventListener("click", function() {
                 // Computer Choice
@@ -80,9 +77,8 @@ const game = () => {
                 playerHand.src = './assets/rock.png';
                 computerHand.src = './assets/rock.png';
 
-
+                // Sets timeout for hands, and after aniation it show the picks
                 setTimeout(() => {
-
                     // Call compareHands
                     compareHands(this.textContent, computerChoice)
 
@@ -91,36 +87,35 @@ const game = () => {
                     computerHand.src = `./assets/${computerChoice}.png`;
                 }, 1800)
 
-                // Animation
+                // Adds animation to playerHand and computerhand
                 playerHand.style.animation = "shakePlayer 2s ease";
                 computerHand.style.animation = "shakeComputer 2s ease"
             });
         });
 
-        const computerNumber = Math.floor(Math.random() * 3);
-
     }
 
+    // Updates score after every move
     const updateScore = () => {
         const playerScore = document.querySelector('.player-score p');
         const computerScore = document.querySelector('.computer-score p')
         playerScore.textContent = pScore;
         computerScore.textContent = cScore;
 
-
+        // checks after every move that someone has 3 points
         gameOver();
-
-
     }
 
     const compareHands = (playerChoice, computerChoice) => {
         // Update text
         const winner = document.querySelector('.winner');
 
+        // Check for tie
         if(playerChoice === computerChoice) {
             winner.textContent = "It's a tie!";
             return;
         };
+
         // Check for rock
         if(playerChoice === 'rock') {
             if(computerChoice === 'scissors'){
@@ -135,6 +130,7 @@ const game = () => {
                 return;
             }
         };
+
         // Check for scissors
         if(playerChoice === 'scissors') {
             if(computerChoice === 'paper') {
@@ -149,6 +145,7 @@ const game = () => {
                 return
             }
         };
+
         // Check for Paper
         if (playerChoice === 'paper') {
             if (computerChoice === 'rock') {
@@ -166,7 +163,7 @@ const game = () => {
 
     }
 
-    // Checks when player or computer gain 3 points and display gameOver screen
+    // Check when player or computer gain 3 points and display gameOver screen
     const gameOver = () => {
         const gameOverHeading = document.querySelector('.gameOver h1');
         const gameOverParagraph = document.querySelector('.gameOver p');
@@ -200,7 +197,6 @@ const game = () => {
     const playAgain = () => {
         const playAgainButton = document.querySelector('.gameOver button');
 
-
         playAgainButton.addEventListener(
             'click',
             () => {
@@ -211,9 +207,8 @@ const game = () => {
                 introScreen.style.transition = 'opacity 0.5s ease 1.2s'
                 introScreen.classList.add('fadeIn')
 
-
-
-
+                // Updates score after the game ends
+                updateScore();
             }
         )
     }

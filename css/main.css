@@ -25,6 +25,7 @@ section {
 }
 
 .score h2 {
+  margin-top: 30px;
   font-size: 30px;
 }
 
@@ -207,19 +208,21 @@ div.fadeIn {
   .intro li {
     font-size: 15px;
   }
-  .intro button,
-  .match button,
-  .playerName button,
-  .gameOver button {
+  .playerName h1 {
+    font-size: 30px;
+  }
+  .gameOver h1 {
+    font-size: 30px;
+    text-align: center;
+  }
+  .match .winner {
+    font-size: 30px;
+    text-align: center;
+  }
+  .match button {
     width: 90px;
     height: 30px;
-    cursor: pointer;
-    margin: 10px;
-    background: none;
-    border: none;
-    color: #f6f6f6;
     font-size: 13px;
-    background: #023246;
     border-radius: 2px;
   }
   img {

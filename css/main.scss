@@ -18,6 +18,7 @@ section {
     align-items: center;
 
     h2 {
+        margin-top: 30px;
         font-size: 30px;
     }
 
@@ -174,22 +175,36 @@ div.fadeIn {
         }
     }
 
-    .intro button,
-    .match button,
-    .playerName button,
-    .gameOver button,
-        {
-        width: 90px;
-        height: 30px;
-        cursor: pointer;
-        margin: 10px;
-        background: none;
-        border: none;
-        color: #f6f6f6;
-        font-size: 13px;
-        background: #023246;
-        border-radius: 2px;
+    .playerName {
+        h1 {
+            font-size: 30px;
+        }
     }
+
+    .gameOver {
+        h1 {
+            font-size: 30px;
+            text-align: center;
+        }
+    }
+
+
+    .match {
+
+        .winner {
+            font-size: 30px;
+            text-align: center;
+        }
+
+        button {
+            width: 90px;
+            height: 30px;
+            font-size: 13px;
+            border-radius: 2px;
+        }
+
+    }
+
     img {
         width: 152px;
         height: 134px;
@@ -201,62 +216,62 @@ div.fadeIn {
 
 }
 
-    @keyframes shakePlayer {
-        0% {
-            transform: rotateY(180deg) rotateZ(0deg) translateY(0px);
-        }
-
-        15% {
-            transform: rotateY(180deg) rotateZ(50deg) translateY(-50px);
-        }
-
-        30% {
-            transform: rotateY(180deg) rotateZ(0deg) translateY(0px);
-        }
-
-        45% {
-            transform: rotateY(180deg) rotateZ(50deg) translateY(-50px);
-        }
-
-        60% {
-            transform: rotateY(180deg) rotateZ(0deg) translateY(0px);
-        }
-
-        80% {
-            transform: rotateY(180deg) rotateZ(50deg) translateY(-50px);
-        }
-
-        100% {
-            transform: rotateY(180deg) rotateZ(0deg) translateY(0px);
-        }
+@keyframes shakePlayer {
+    0% {
+        transform: rotateY(180deg) rotateZ(0deg) translateY(0px);
     }
 
-    @keyframes shakeComputer {
-        0% {
-            transform: rotateZ(0deg) translateY(0px);
-        }
-
-        15% {
-            transform: rotateZ(50deg) translateY(-50px);
-        }
-
-        30% {
-            transform: rotateZ(0deg) translateY(0px);
-        }
-
-        45% {
-            transform: rotateZ(50deg) translateY(-50px);
-        }
-
-        60% {
-            transform: rotateZ(0deg) translateY(0px);
-        }
-
-        80% {
-            transform: rotateZ(50deg) translateY(-50px);
-        }
-
-        100% {
-            transform: rotateZ(0deg) translateY(0px);
-        }
+    15% {
+        transform: rotateY(180deg) rotateZ(50deg) translateY(-50px);
     }
+
+    30% {
+        transform: rotateY(180deg) rotateZ(0deg) translateY(0px);
+    }
+
+    45% {
+        transform: rotateY(180deg) rotateZ(50deg) translateY(-50px);
+    }
+
+    60% {
+        transform: rotateY(180deg) rotateZ(0deg) translateY(0px);
+    }
+
+    80% {
+        transform: rotateY(180deg) rotateZ(50deg) translateY(-50px);
+    }
+
+    100% {
+        transform: rotateY(180deg) rotateZ(0deg) translateY(0px);
+    }
+}
+
+@keyframes shakeComputer {
+    0% {
+        transform: rotateZ(0deg) translateY(0px);
+    }
+
+    15% {
+        transform: rotateZ(50deg) translateY(-50px);
+    }
+
+    30% {
+        transform: rotateZ(0deg) translateY(0px);
+    }
+
+    45% {
+        transform: rotateZ(50deg) translateY(-50px);
+    }
+
+    60% {
+        transform: rotateZ(0deg) translateY(0px);
+    }
+
+    80% {
+        transform: rotateZ(50deg) translateY(-50px);
+    }
+
+    100% {
+        transform: rotateZ(0deg) translateY(0px);
+    }
+}
