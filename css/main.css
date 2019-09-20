@@ -115,7 +115,7 @@ section {
 }
 
 .playerName input {
-  width: 350px;
+  width: 450px;
   height: 50px;
   font-size: 30px;
 }
@@ -197,7 +197,7 @@ div.fadeIn {
   pointer-events: all;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .intro {
     height: 50vh;
   }
@@ -210,6 +210,9 @@ div.fadeIn {
   }
   .playerName h1 {
     font-size: 30px;
+  }
+  .playerName input {
+    width: 350px;
   }
   .gameOver h1 {
     font-size: 30px;
@@ -233,6 +236,37 @@ div.fadeIn {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+  }
+}
+
+@media (max-width: 450px) {
+  .intro h1 {
+    font-size: 15px;
+    margin-bottom: 40px;
+  }
+  .intro li {
+    font-size: 10px;
+  }
+  .playerName h1 {
+    font-size: 20px;
+  }
+  .playerName input {
+    width: 75vw;
+    font-size: 7vw;
+  }
+  .gameOver h1 {
+    font-size: 20px;
+    text-align: center;
+  }
+  .match .winner {
+    font-size: 20px;
+    text-align: center;
+  }
+  .match button {
+    width: 70px;
+    height: 25px;
+    font-size: 9px;
+    border-radius: 2px;
   }
 }
 
