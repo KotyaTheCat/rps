@@ -43,7 +43,14 @@ const game = () => {
 
                 // Add current player to the heading
                 playerName = inputPlayer.value;
-                player.innerText = playerName.charAt(0).toUpperCase() + playerName.slice(1);
+                
+                if (playerName !== '') {
+                    player.innerText = playerName.charAt(0).toUpperCase() + playerName.slice(1);
+                } else {
+                    player.innerText = "Nonamer"
+                }
+
+                
 
             }
         )
