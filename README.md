@@ -8,3 +8,5 @@ This site was made with:
 
 Live version on surge is a little bit laggy, to get the best comfort of playing, clone the repository and open index.html file.
 Cheers
+
+![Alt Text](./assets/rockPaperSizor.gif)
