@@ -8,7 +8,6 @@ const game = () => {
     const matchScreen = document.querySelector('.match');
     const gameOverScreen = document.querySelector('.gameOver');
 
-
     // Allows user to type his name
     const typeUserScreen = () => {
         const nextButton = document.querySelector('.intro button');
@@ -47,7 +46,7 @@ const game = () => {
                 if (playerName !== '') {
                     player.innerText = playerName.charAt(0).toUpperCase() + playerName.slice(1);
                 } else {
-                    player.innerText = "Nonamer"
+                    player.innerText = "Player"
                 }
 
                 
@@ -81,8 +80,8 @@ const game = () => {
                 const computerNumber = Math.floor(Math.random() * 3);
                 const computerChoice = computerOption[computerNumber]
 
-                playerHand.src = './assets/rock.png';
-                computerHand.src = './assets/rock.png';
+                playerHand.src = 'rock.png';
+                computerHand.src = 'rock.png';
 
                 // Sets timeout for hands, and after aniation it show the picks
                 setTimeout(() => {
@@ -90,8 +89,8 @@ const game = () => {
                     compareHands(this.textContent, computerChoice)
 
                     // Update Images
-                    playerHand.src = `./assets/${this.textContent}.png`;
-                    computerHand.src = `./assets/${computerChoice}.png`;
+                    playerHand.src = `${this.textContent}.png`;
+                    computerHand.src = `${computerChoice}.png`;
                 }, 1800)
 
                 // Adds animation to playerHand and computerhand
@@ -117,13 +116,13 @@ const game = () => {
         // Update text
         const winner = document.querySelector('.winner');
 
-        // Check for tie
+        // Tie
         if(playerChoice === computerChoice) {
             winner.textContent = "It's a tie!";
             return;
         };
 
-        // Check for rock
+        // Rock
         if(playerChoice === 'rock') {
             if(computerChoice === 'scissors'){
                 winner.textContent = `${player.innerText} Wins!`;
@@ -138,7 +137,7 @@ const game = () => {
             }
         };
 
-        // Check for scissors
+        // Scissors
         if(playerChoice === 'scissors') {
             if(computerChoice === 'paper') {
                 winner.textContent = `${player.innerText} Wins!`;
@@ -153,7 +152,7 @@ const game = () => {
             }
         };
 
-        // Check for Paper
+        // Paper
         if (playerChoice === 'paper') {
             if (computerChoice === 'rock') {
                 winner.textContent = `${player.innerText} Wins!`;
@@ -181,8 +180,8 @@ const game = () => {
             matchScreen.classList.add('fadeOut');
             gameOverScreen.classList.add('fadeIn');
             gameOverScreen.classList.remove('fadeOut');
-            gameOverHeading.innerText = `Good Job ${player.innerText}!!`;
-            gameOverParagraph.innerText = `You won with stupid computer`
+            gameOverHeading.innerText = `Good Job ${player.innerText}!`;
+            gameOverParagraph.innerText = `You won with stupid computer :)`
             pScore = 0;
             cScore = 0;
             return
@@ -191,7 +190,7 @@ const game = () => {
             matchScreen.classList.add('fadeOut');
             gameOverScreen.classList.add('fadeIn');
             gameOverScreen.classList.remove('fadeOut');
-            gameOverHeading.innerText = `Unlucky ${player.innerText}!!`;
+            gameOverHeading.innerText = `Unlucky ${player.innerText}!`;
             gameOverParagraph.innerText = `You lost with stupid computer :(`
             pScore = 0;
             cScore = 0;
